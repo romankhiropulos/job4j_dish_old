@@ -31,7 +31,7 @@
     <profiles>
         <profile>
             <id>test</id>
-            <properties><liquibase.changeLogFile>dbChangelog.xml</liquibase.changeLogFile>
+            <properties><liquibase.changeLogFile>db/dbchangelog.xml</liquibase.changeLogFile>
                 <liquibase.url>jdbc:h2:./testdb;MODE=PostgreSQL;CASE_INSENSITIVE_IDENTIFIERS=TRUE;</liquibase.url>
                 <liquibase.username></liquibase.username>
                 <liquibase.password></liquibase.password>
@@ -43,7 +43,7 @@
         <profile>
             <id>production</id>
             <properties>
-                <liquibase.changeLogFile>dbChangelog.xml</liquibase.changeLogFile>
+                <liquibase.changeLogFile>db/dbchangelog.xml</liquibase.changeLogFile>
                 <liquibase.url>jdbc:postgresql://127.0.0.1:5432/dish</liquibase.url>
                 <liquibase.username>postgres</liquibase.username>
                 <liquibase.password>jenny</liquibase.password>
@@ -52,7 +52,7 @@
         <profile>
             <id>docker</id>
             <properties>
-                <liquibase.changeLogFile>dbChangelog.xml</liquibase.changeLogFile>
+                <liquibase.changeLogFile>db/dbchangelog.xml</liquibase.changeLogFile>
                 <liquibase.url>${docker.db.url.jdbc}</liquibase.url>
                 <liquibase.username>${docker.db.username.jdbc}</liquibase.username>
                 <liquibase.password>${docker.db.password.jdbc}</liquibase.password>
@@ -66,12 +66,12 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -101,7 +101,6 @@
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
-            <version>2.2.3</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>

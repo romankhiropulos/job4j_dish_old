@@ -6,14 +6,21 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-@Configuration
+//@Configuration
 public class LiquibaseConfig {
-    
-    @Bean
-    public SpringLiquibase liquibase(DataSource ds) {
-        SpringLiquibase liquibase = new SpringLiquibase();
-        liquibase.setChangeLog("classpath:dbChangelog.xml");
-        liquibase.setDataSource(ds);
-        return liquibase;
+
+//    private final DataSource ds;
+//
+//    public LiquibaseConfig(DataSource ds) {
+//        this.ds = ds;
+//    }
+
+//    @Bean
+    public SpringLiquibase liquibase() {
+//        SpringLiquibase liquibase = new SpringLiquibase();
+//        liquibase.setChangeLog("classpath:db/dbchangelog.xml");
+       // liquibase.setDataSource(ds);
+//        return liquibase;
+        return null;
     }
 }
