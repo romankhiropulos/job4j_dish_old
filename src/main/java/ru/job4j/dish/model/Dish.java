@@ -1,14 +1,21 @@
 package ru.job4j.dish.model;
 
-import lombok.Builder;
-import lombok.Data;
-
+import lombok.*;
+import javax.persistence.*;
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(schema = "public", name = "dish")
 public class Dish {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     private String name;

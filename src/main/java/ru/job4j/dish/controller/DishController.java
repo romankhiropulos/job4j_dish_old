@@ -2,6 +2,8 @@ package ru.job4j.dish.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.job4j.dish.model.Dish;
 import ru.job4j.dish.service.DishService;
@@ -17,5 +19,10 @@ public class DishController {
     @GetMapping("/getAll")
     public Collection<Dish> getAll() {
         return dishService.findAll();
+    }
+
+    @PostMapping("/create")
+    public void create(@RequestBody Dish dish) {
+        dishService.addDish(dish);
     }
 }

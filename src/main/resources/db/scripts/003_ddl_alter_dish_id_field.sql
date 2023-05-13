@@ -1,0 +1,1 @@
+ALTER TABLE dish ADD CONSTRAINT dish_pk PRIMARY KEY (id);

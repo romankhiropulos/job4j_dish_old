@@ -4,7 +4,7 @@ services:
     image: postgres
     container_name: db
     environment:
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=jenny
       - POSTGRES_USER=postgres
       - POSTGRES_DB=dish
       - PGDATA=/var/lib/postgresql/data
