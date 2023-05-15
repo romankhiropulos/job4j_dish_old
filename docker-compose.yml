@@ -10,6 +10,8 @@ services:
       - PGDATA=/var/lib/postgresql/data
     volumes:
       - ./db/shortcut/data:/var/lib/postgresql/data
+#    ports:
+#      - "5432:5432"
     restart: always
   job4j_dish:
     build:
@@ -21,5 +23,7 @@ services:
       - JDBC_PASSWORD=jenny
       - JDBC_DRIVER=org.postgresql.Driver
     container_name: job4j_dish
+#    ports:
+#      - "127.0.0.1:8088:8088"
     depends_on:
       - db
