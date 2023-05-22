@@ -9,4 +9,4 @@ RUN mvn package -Dmaven.test.skip=true
 
 CMD ["mvn", "liquibase:update", "-Pdocker"]
 
-CMD ["java", "-jar", "target/dish_docker_task.jar"]
+CMD ["java", "-jar", "target/dish-0.0.1-SNAPSHOT.jar"]
